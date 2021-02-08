@@ -1,0 +1,12 @@
+C:\Users\admin\source\repos\MusicLibrary\MusicLibrary.Business\bin\Debug\netcoreapp3.1\MusicLibrary.Business.deps.json
+C:\Users\admin\source\repos\MusicLibrary\MusicLibrary.Business\bin\Debug\netcoreapp3.1\MusicLibrary.Business.dll
+C:\Users\admin\source\repos\MusicLibrary\MusicLibrary.Business\obj\Debug\netcoreapp3.1\MusicLibrary.Business.csprojAssemblyReference.cache
+C:\Users\admin\source\repos\MusicLibrary\MusicLibrary.Business\obj\Debug\netcoreapp3.1\MusicLibrary.Business.AssemblyInfoInputs.cache
+C:\Users\admin\source\repos\MusicLibrary\MusicLibrary.Business\obj\Debug\netcoreapp3.1\MusicLibrary.Business.AssemblyInfo.cs
+C:\Users\admin\source\repos\MusicLibrary\MusicLibrary.Business\bin\Debug\netcoreapp3.1\MusicLibrary.Business.pdb
+C:\Users\admin\source\repos\MusicLibrary\MusicLibrary.Business\bin\Debug\netcoreapp3.1\MusicLibrary.DAL.dll
+C:\Users\admin\source\repos\MusicLibrary\MusicLibrary.Business\bin\Debug\netcoreapp3.1\MusicLibrary.DAL.pdb
+C:\Users\admin\source\repos\MusicLibrary\MusicLibrary.Business\obj\Debug\netcoreapp3.1\MusicLibrary.Business.csproj.CoreCompileInputs.cache
+C:\Users\admin\source\repos\MusicLibrary\MusicLibrary.Business\obj\Debug\netcoreapp3.1\MusicLibrary.Business.csproj.CopyComplete
+C:\Users\admin\source\repos\MusicLibrary\MusicLibrary.Business\obj\Debug\netcoreapp3.1\MusicLibrary.Business.dll
+C:\Users\admin\source\repos\MusicLibrary\MusicLibrary.Business\obj\Debug\netcoreapp3.1\MusicLibrary.Business.pdb
