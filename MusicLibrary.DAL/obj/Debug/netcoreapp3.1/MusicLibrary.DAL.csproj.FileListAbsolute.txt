@@ -5,8 +5,8 @@ C:\Users\admin\source\repos\MusicLibrary\MusicLibrary.DAL\obj\Debug\netcoreapp3.
 C:\Users\admin\source\repos\MusicLibrary\MusicLibrary.DAL\bin\Debug\netcoreapp3.1\MusicLibrary.DAL.runtimeconfig.json
 C:\Users\admin\source\repos\MusicLibrary\MusicLibrary.DAL\bin\Debug\netcoreapp3.1\MusicLibrary.DAL.runtimeconfig.dev.json
 C:\Users\admin\source\repos\MusicLibrary\MusicLibrary.DAL\obj\Debug\netcoreapp3.1\MusicLibrary.DAL.genruntimeconfig.cache
-C:\Users\admin\source\repos\MusicLibrary\MusicLibrary.DAL\obj\Debug\netcoreapp3.1\MusicLibrary.DAL.csproj.CoreCompileInputs.cache
 C:\Users\admin\source\repos\MusicLibrary\MusicLibrary.DAL\bin\Debug\netcoreapp3.1\MusicLibrary.DAL.pdb
 C:\Users\admin\source\repos\MusicLibrary\MusicLibrary.DAL\obj\Debug\netcoreapp3.1\MusicLibrary.DAL.dll
 C:\Users\admin\source\repos\MusicLibrary\MusicLibrary.DAL\obj\Debug\netcoreapp3.1\MusicLibrary.DAL.pdb
+C:\Users\admin\source\repos\MusicLibrary\MusicLibrary.DAL\obj\Debug\netcoreapp3.1\MusicLibrary.DAL.csproj.CoreCompileInputs.cache
 C:\Users\admin\source\repos\MusicLibrary\MusicLibrary.DAL\obj\Debug\netcoreapp3.1\MusicLibrary.DAL.csprojAssemblyReference.cache

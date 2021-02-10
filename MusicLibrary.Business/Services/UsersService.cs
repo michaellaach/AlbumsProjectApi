@@ -57,5 +57,18 @@ namespace MusicLibrary.Business.Services
             await _userRepository.DeleteAndSaveAsync(id);
         }
 
+        public async Task BoughtAlbum(Guid userId, Guid albumId)
+        {
+            await _userRepository.BoughtAlbum(userId, albumId);
+        }
+
+        public UserModel GetUserWithAlbums(Guid id)
+        {
+            var dbUser = _userRepository.GetUserWithAlbums(id);
+
+            return _mapper.Map<UserModel>(dbUser);
+        }
+
     }
 }
+

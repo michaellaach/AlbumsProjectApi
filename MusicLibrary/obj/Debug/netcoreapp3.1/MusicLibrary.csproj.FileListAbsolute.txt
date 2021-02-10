@@ -143,3 +143,4 @@ C:\Users\admin\source\repos\MusicLibrary\MusicLibrary\bin\Debug\netcoreapp3.1\Mi
 C:\Users\admin\source\repos\MusicLibrary\MusicLibrary\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\admin\source\repos\MusicLibrary\MusicLibrary\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\admin\source\repos\MusicLibrary\MusicLibrary\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\admin\source\repos\MusicLibrary\MusicLibrary\bin\Debug\netcoreapp3.1\DataAnnotationsExtensions.dll
