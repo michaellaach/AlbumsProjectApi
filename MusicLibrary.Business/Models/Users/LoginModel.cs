@@ -5,13 +5,13 @@ using System.Text;
 
 namespace MusicLibrary.Business.Models.Users
 {
-   public  class CreateUserModel : BaseModel
+   public class LoginModel : BaseModel
     {
         [Required]
-
+       
         public string Username { get; set; }
+
         [Required]
         public string Password { get; set; }
-        public bool IsAdmin { get; set; }
     }
 }

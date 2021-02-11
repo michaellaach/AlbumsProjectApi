@@ -6,7 +6,10 @@ C:\Users\admin\source\repos\MusicLibrary\MusicLibrary.Business\obj\Debug\netcore
 C:\Users\admin\source\repos\MusicLibrary\MusicLibrary.Business\bin\Debug\netcoreapp3.1\MusicLibrary.Business.pdb
 C:\Users\admin\source\repos\MusicLibrary\MusicLibrary.Business\bin\Debug\netcoreapp3.1\MusicLibrary.DAL.dll
 C:\Users\admin\source\repos\MusicLibrary\MusicLibrary.Business\bin\Debug\netcoreapp3.1\MusicLibrary.DAL.pdb
-C:\Users\admin\source\repos\MusicLibrary\MusicLibrary.Business\obj\Debug\netcoreapp3.1\MusicLibrary.Business.csproj.CoreCompileInputs.cache
 C:\Users\admin\source\repos\MusicLibrary\MusicLibrary.Business\obj\Debug\netcoreapp3.1\MusicLibrary.Business.csproj.CopyComplete
 C:\Users\admin\source\repos\MusicLibrary\MusicLibrary.Business\obj\Debug\netcoreapp3.1\MusicLibrary.Business.dll
 C:\Users\admin\source\repos\MusicLibrary\MusicLibrary.Business\obj\Debug\netcoreapp3.1\MusicLibrary.Business.pdb
+C:\Users\admin\source\repos\MusicLibrary\MusicLibrary.Business\bin\Debug\netcoreapp3.1\MusicLibrary.Business.runtimeconfig.json
+C:\Users\admin\source\repos\MusicLibrary\MusicLibrary.Business\bin\Debug\netcoreapp3.1\MusicLibrary.Business.runtimeconfig.dev.json
+C:\Users\admin\source\repos\MusicLibrary\MusicLibrary.Business\obj\Debug\netcoreapp3.1\MusicLibrary.Business.genruntimeconfig.cache
+C:\Users\admin\source\repos\MusicLibrary\MusicLibrary.Business\obj\Debug\netcoreapp3.1\MusicLibrary.Business.csproj.CoreCompileInputs.cache

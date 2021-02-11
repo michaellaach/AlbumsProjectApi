@@ -2,8 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
+using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -15,6 +17,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using MusicLibrary.Business.Services;
 using MusicLibrary.Business.Services.Interfaces;
@@ -24,6 +27,7 @@ using MusicLibrary.DAL.Repositories;
 using MusicLibrary.DAL.Repositories.Interfaces;
 
 using MusicLibrary.Infrastructure;
+using OnlineLibrary.Business.Services;
 
 namespace MusicLibrary
 {
@@ -44,6 +48,22 @@ namespace MusicLibrary
             services.AddDbContext<MusicLibraryContext>(options => {
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
+
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+              .AddJwtBearer(options =>
+              {
+                  options.TokenValidationParameters = new TokenValidationParameters
+                  {
+                      ValidateAudience = true,
+                      ValidateIssuer = true,
+                      ValidateLifetime = true,
+                      ValidateIssuerSigningKey = true,
+                      ValidAudience = Configuration["Jwt:Issuer"],
+                      ValidIssuer = Configuration["Jwt:Issuer"],
+                      IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]))
+                  };
+              });
+
             services.AddControllers();
 
             services.AddSwaggerGen(c =>
@@ -62,7 +82,20 @@ namespace MusicLibrary
                     In = ParameterLocation.Header,
                     Type = SecuritySchemeType.Http,
                 });
-              
+                c.AddSecurityRequirement(new OpenApiSecurityRequirement()
+                {
+                    {
+                        new OpenApiSecurityScheme()
+                        {
+                            Reference = new OpenApiReference()
+                            {
+                                Id = "jwt_auth",
+                                Type = ReferenceType.SecurityScheme
+                            }
+                        },
+                        new string[] { }},
+                });
+
             });
 
 
@@ -76,6 +109,7 @@ namespace MusicLibrary
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IUsersService, UsersService>();
             services.AddScoped<IAlbumService, AlbumService>();
+            services.AddScoped<IAuthService, AuthService>();
 
 
             services.AddRouting(Options => Options.LowercaseUrls = true);

@@ -16,5 +16,8 @@ namespace MusicLibrary.Business.Services.Interfaces
         Task UpdateAsync(UserModel model);
         Task BoughtAlbum(Guid userId, Guid albumId);
         UserModel GetUserWithAlbums(Guid id);
+        List<UserModel> GetAllUsersWithAlbums(Expression<Func<UserModel, bool>> filter = null);
+        UserAuthModel GetUserByUsername(string username);
+        bool DoesUsernameExist(string username);
     }
 }

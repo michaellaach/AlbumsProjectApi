@@ -136,11 +136,12 @@ C:\Users\admin\source\repos\MusicLibrary\MusicLibrary\bin\Debug\netcoreapp3.1\ru
 C:\Users\admin\source\repos\MusicLibrary\MusicLibrary\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\admin\source\repos\MusicLibrary\MusicLibrary\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\admin\source\repos\MusicLibrary\MusicLibrary\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\admin\source\repos\MusicLibrary\MusicLibrary\obj\Debug\netcoreapp3.1\MusicLibrary.csproj.CoreCompileInputs.cache
-C:\Users\admin\source\repos\MusicLibrary\MusicLibrary\obj\Debug\netcoreapp3.1\MusicLibrary.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\admin\source\repos\MusicLibrary\MusicLibrary\obj\Debug\netcoreapp3.1\MusicLibrary.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\admin\source\repos\MusicLibrary\MusicLibrary\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
 C:\Users\admin\source\repos\MusicLibrary\MusicLibrary\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\admin\source\repos\MusicLibrary\MusicLibrary\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\admin\source\repos\MusicLibrary\MusicLibrary\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\admin\source\repos\MusicLibrary\MusicLibrary\bin\Debug\netcoreapp3.1\DataAnnotationsExtensions.dll
+C:\Users\admin\source\repos\MusicLibrary\MusicLibrary\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\admin\source\repos\MusicLibrary\MusicLibrary\obj\Debug\netcoreapp3.1\MusicLibrary.csproj.CoreCompileInputs.cache
+C:\Users\admin\source\repos\MusicLibrary\MusicLibrary\obj\Debug\netcoreapp3.1\MusicLibrary.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\admin\source\repos\MusicLibrary\MusicLibrary\obj\Debug\netcoreapp3.1\MusicLibrary.MvcApplicationPartsAssemblyInfo.cache

@@ -4,12 +4,14 @@ using System.Linq;
 using System.Net;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MusicLibrary.Business.Models;
 using MusicLibrary.Business.Models.Users;
 using MusicLibrary.Business.Services;
 using MusicLibrary.Business.Services.Interfaces;
+using MusicLibrary.Infrastructure;
 
 namespace MusicLibrary.Controllers
 {
@@ -27,6 +29,7 @@ namespace MusicLibrary.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = UserRoleConstants.Admin)]
         public IActionResult GetAll()
         {
             var result = _usersService.GetAll();
@@ -34,6 +37,7 @@ namespace MusicLibrary.Controllers
         }
 
         [HttpGet("(id)")]
+        [Authorize(Roles = UserRoleConstants.Admin)]
         public IActionResult Get(Guid id)
         {
             var result = _usersService.GetById(id);
@@ -48,8 +52,13 @@ namespace MusicLibrary.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = UserRoleConstants.Admin)]
         public async Task<IActionResult> Create(CreateUserModel model)
         {
+            if (_usersService.DoesUsernameExist(model.Username))
+            {
+                return BadRequest("Username already exists");
+            }
 
             await _usersService.InsertAsync(model);
 
@@ -57,14 +66,21 @@ namespace MusicLibrary.Controllers
         }
 
         [HttpPut]
+        [Authorize(Roles = UserRoleConstants.Admin)]
         public async Task<IActionResult> Put(UserModel model)
         {
 
-            var result = _usersService.GetById(model.Id);
+            var user = _usersService.GetById(model.Id);
 
-            if (result == null)
+
+            if (user == null)
             {
-                return BadRequest("Object does not exist");
+                return BadRequest("Object with the provided id does not exist");
+            }
+
+            if (model.Username != user.Username && _usersService.DoesUsernameExist(model.Username))
+            {
+                return BadRequest("Email already exists");
             }
 
             await _usersService.UpdateAsync(model);
@@ -73,6 +89,7 @@ namespace MusicLibrary.Controllers
         }
 
         [HttpDelete]
+        [Authorize(Roles = UserRoleConstants.Admin)]
         public async Task<IActionResult> Delete(Guid id)
         {
             var result = _usersService.GetById(id);
@@ -88,7 +105,7 @@ namespace MusicLibrary.Controllers
 
 
         [HttpGet("{userId}/books")]
-       
+        [Authorize]
         public IActionResult GetUserAlbums(Guid userId)
         {
             var user = _usersService.GetUserWithAlbums(userId);
@@ -103,6 +120,7 @@ namespace MusicLibrary.Controllers
 
 
         [HttpPost("{userId}/albums/{albumId}")]
+        [Authorize]
         public async Task<IActionResult> BoughtAlbum(Guid userId, Guid albumId)
         {
             var user = _usersService.GetUserWithAlbums(userId);

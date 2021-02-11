@@ -1,15 +1,28 @@
-﻿using System;
+﻿using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
+using MusicLibrary.Business.Models.Users;
+using MusicLibrary.Business.Services;
+using MusicLibrary.Business.Services.Interfaces;
+using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
+using System.Threading.Tasks;
 
-namespace MusicLibrary.Business.Services
+namespace OnlineLibrary.Business.Services
 {
-   public class AuthService
+    public class AuthService : IAuthService
     {
-        public AuthService()
-        {
+        private readonly IConfiguration _configuration;
+        private readonly IUsersService _usersService;
 
+        public AuthService(IConfiguration configuration,
+            IUsersService userRepository)
+        {
+            _configuration = configuration;
+            _usersService = userRepository;
         }
 
         public static string HashPassword(string password)
@@ -45,6 +58,48 @@ namespace MusicLibrary.Business.Services
                 }
             }
             return true;
+        }
+
+        public Task<string> Authenticate(LoginModel model)
+        {
+            var user = _usersService.GetUserByUsername(model.Username);
+
+            if (user == null || !IsPasswordMatching(model.Password, user.Password))
+            {
+                return Task.FromResult<string>(null);
+            }
+
+            return GenerateToken(user);
+        }
+
+        public Task<string> GenerateToken(UserAuthModel user)
+        {
+            var claims = PopulateTokenClaims(user);
+
+            var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]));
+            var signinCredentials = new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256);
+
+            var tokeOptions = new JwtSecurityToken(
+               issuer: _configuration["Jwt:Issuer"],
+               audience: _configuration["Jwt:Issuer"],
+               claims: claims,
+               expires: DateTime.Now.AddMinutes(30),
+               signingCredentials: signinCredentials
+            );
+
+            var tokenString = new JwtSecurityTokenHandler().WriteToken(tokeOptions);
+
+            return Task.FromResult(tokenString);
+        }
+
+        private List<Claim> PopulateTokenClaims(UserAuthModel user)
+        {
+            return new List<Claim>()
+            {
+                new Claim(JwtRegisteredClaimNames.UniqueName, user.Username),
+                new Claim(JwtRegisteredClaimNames.Jti, user.Id.ToString()),
+                new Claim(ClaimTypes.Role, user.Role.ToString())
+            };
         }
     }
 }
